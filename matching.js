@@ -83,7 +83,7 @@ function humanizeRayons(rayons) {
 }
 
 function readKoatuu() {
-  return readCSV('KOATUU_14022017.csv').then((koatuuRaw) => {
+  return readCSV('data/KOATUU_14022017.csv').then((koatuuRaw) => {
     // { TE, NU, NP } => { code, name, type }
     let koatuu = normalizeKoatuuFields(koatuuRaw);
     let regions = filterRegions(koatuu);
@@ -135,7 +135,7 @@ function isCityViddil(viddil) {
 }
 
 Promise.all([
-  readCSV('minjust_vdvs.csv'),
+  readCSV('data/minjust_vdvs.csv'),
   readKoatuu()
 ]).then(function(data) {
   let [vdvs, koatuu] = data;
