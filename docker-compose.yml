@@ -1,0 +1,7 @@
+version: '2'
+services:
+  match:
+    build: ./build
+    command: sh -c "yarn install"
+    volumes:
+      - .:/src
