@@ -10,6 +10,8 @@ services:
       - ./.yarnrc:/root/.yarnrc
       - yarn_cache:/root/.cache
       - node_modules:/src/node_modules
+      - packages_cache:/src/.packages-cache
 volumes:
   yarn_cache:
   node_modules:
+  packages_cache:
