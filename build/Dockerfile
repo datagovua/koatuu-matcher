@@ -2,7 +2,7 @@ FROM node:7-alpine
 
 RUN apk update && \
     apk upgrade && \
-    apk add tini
+    apk add tini && which yarn
 
 #RUN npm install yarn -g
 

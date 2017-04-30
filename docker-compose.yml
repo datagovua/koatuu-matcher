@@ -1,7 +1,15 @@
-version: '2'
+version: '3'
 services:
   match:
     build: ./build
+    stdin_open: true
+    tty: true
     command: sh -c "yarn install"
     volumes:
       - .:/src
+      - ./.yarnrc:/root/.yarnrc
+      - yarn_cache:/root/.cache
+      - node_modules:/src/node_modules
+volumes:
+  yarn_cache:
+  node_modules:
